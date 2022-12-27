@@ -31,3 +31,9 @@ jobs:
           push: true
           tags: jojoc4/lsbs-front:latest
           file: Frontend/Dockerfile
+      - name: Build and push api
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-api:latest
+          file: Benchamrk-api/Dockerfile

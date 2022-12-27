@@ -22,7 +22,7 @@ services:
     ports:
       - 8080:8080
   bench-api:
-    image: registry.jojoc4.ch/tm-benchmark-api
+    image: jojoc4/lsbs-api:latest
     restart: always
     ports:
       - 81:80
