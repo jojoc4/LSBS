@@ -1,0 +1,22 @@
+- name: hpcc
+  hosts: virtualmachines
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: Install hpcc
+      ansible.builtin.apt:
+        name: hpcc
+        update_cache: yes
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/hpcc/
+        dest: /root
+        owner: root
+    - name: Run bench
+      ansible.builtin.command: bash /root/run.sh
+      environment:
+        OMPI_ALLOW_RUN_AS_ROOT: 1
+        OMPI_ALLOW_RUN_AS_ROOT_CONFIRM: 1
+        CONTROLPLANEIP: "http://{{ CONTROLPLANEIP }}:81/result"
+        SYSTEM: "{{ SYSTEM }}"
+        TYPE: "{{ TYPE }}"

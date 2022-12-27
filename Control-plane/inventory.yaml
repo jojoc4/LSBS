@@ -1,0 +1,5 @@
+all:
+  hosts:
+    target_ip_or_fqdn:
+  vars:
+    ansible_user: rocky

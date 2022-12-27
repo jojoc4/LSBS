@@ -1,0 +1,24 @@
+- name: bdd1
+  hosts: virtualmachines
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: Install bdd
+      ansible.builtin.apt:
+        pkg:
+          - build-essential
+          - libsqlite3-dev
+        update_cache: yes
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/bdd/
+        dest: /root
+        owner: root
+    - name: compile
+      ansible.builtin.command: gcc sel.c -o sel  -lsqlite3
+    - name: Run bench
+      ansible.builtin.command: bash /root/run.sh
+      environment:
+        CONTROLPLANEIP: "http://{{ CONTROLPLANEIP }}:81/result"
+        SYSTEM: "{{ SYSTEM }}"
+        TYPE: "{{ TYPE }}"

@@ -1,0 +1,20 @@
+- name: fio
+  hosts: virtualmachines
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: Install fio
+      ansible.builtin.apt:
+        name: fio
+        update_cache: yes
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/fio/
+        dest: /root
+        owner: root
+    - name: Run bench
+      ansible.builtin.command: bash /root/run.sh
+      environment:
+        CONTROLPLANEIP: "http://{{ CONTROLPLANEIP }}:81/result"
+        SYSTEM: "{{ SYSTEM }}"
+        TYPE: "{{ TYPE }}"

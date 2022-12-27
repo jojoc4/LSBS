@@ -1,0 +1,20 @@
+- name: k8s
+  hosts: virtualmachines
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/k8s/
+        dest: /root
+        owner: root
+    - name: setup k0s cluster
+      ansible.builtin.command: bash install.sh
+    - name: Run Bench
+      ansible.builtin.command: bash run.sh
+      environment:
+        SERVERNAME: "{{ CONTROLPLANEIP }}"
+        CONTROLPLANEIP: "http://{{ CONTROLPLANEIP }}:81/result"
+        SYSTEM: "{{ SYSTEM }}"
+        TYPE: "{{ TYPE }}"
+        BENCHMARK: "{{ BENCHMARK }}"

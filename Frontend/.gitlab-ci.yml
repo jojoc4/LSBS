@@ -1,0 +1,15 @@
+stages:
+  - build
+
+before_script:
+  - docker info
+
+building:
+  stage: build
+  tags:
+    - ubuntu-shell
+  script:
+    - docker build -t registry.jojoc4.ch/tm-benchmark-front:latest .
+    - docker push registry.jojoc4.ch/tm-benchmark-front:latest
+  only:
+    - main

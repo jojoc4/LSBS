@@ -1,0 +1,17 @@
+- name: runall
+  hosts: virtualmachines
+
+- name: hpcc
+  ansible.builtin.import_playbook: hpcc.yaml
+- name: fio
+  ansible.builtin.import_playbook: fio.yaml
+- name: iperf
+  ansible.builtin.import_playbook: iperf.yaml
+- name: blender
+  ansible.builtin.import_playbook: blender.yaml
+- name: dl
+  ansible.builtin.import_playbook: dl.yaml
+- name: bdd
+  ansible.builtin.import_playbook: bdd.yaml
+- name: rest
+  ansible.builtin.import_playbook: rest.yaml

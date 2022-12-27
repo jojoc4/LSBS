@@ -1,0 +1,30 @@
+- name: blender
+  hosts: virtualmachines
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: Install blender
+      ansible.builtin.apt:
+        pkg:
+          - wget
+          - bzip2
+          - libfreetype6
+          - libgl1-mesa-dev
+          - libglu1-mesa
+          - libxi6
+          - libxrender1
+        update_cache: yes
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/blender/
+        dest: /root
+        owner: root
+    - name: Install bench
+      ansible.builtin.command: bash /root/install.sh
+    - name: Run bench
+      ansible.builtin.command: bash /root/run.sh
+      environment:
+        DEVTYPE: CPU
+        CONTROLPLANEIP: "http://{{ CONTROLPLANEIP }}:81/result"
+        SYSTEM: "{{ SYSTEM }}"
+        TYPE: "{{ TYPE }}"

@@ -1,0 +1,23 @@
+- name: iperf
+  hosts: virtualmachines
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: Install iperf
+      ansible.builtin.apt:
+        pkg:
+          - iperf3
+          - iputils-ping
+        update_cache: yes
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/iperf/
+        dest: /root
+        owner: root
+    - name: Run bench
+      ansible.builtin.command: bash /root/run.sh
+      environment:
+        SERVERNAME: "{{ CONTROLPLANEIP }}"
+        CONTROLPLANEIP: "http://{{ CONTROLPLANEIP }}:81/result"
+        SYSTEM: "{{ SYSTEM }}"
+        TYPE: "{{ TYPE }}"

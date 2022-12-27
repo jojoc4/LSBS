@@ -1,0 +1,36 @@
+- name: docker
+  hosts: virtualmachines
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: Install dep
+      ansible.builtin.apt:
+        pkg:
+          - ca-certificates
+          - curl
+          - gnupg
+          - lsb-release
+        update_cache: yes
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/docker/
+        dest: /root
+        owner: root
+    - name: Setup repo
+      ansible.builtin.command: bash install.sh
+    - name: Install docker
+      ansible.builtin.apt:
+        pkg:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+          - docker-compose-plugin
+        update_cache: yes
+    - name: Run containers
+      ansible.builtin.command: bash run.sh
+      environment:
+        SERVERNAME: "{{ CONTROLPLANEIP }}"
+        CONTROLPLANEIP: "http://{{ CONTROLPLANEIP }}:81/result"
+        SYSTEM: "{{ SYSTEM }}"
+        TYPE: "{{ TYPE }}"
+        BENCHMARK: "{{ BENCHMARK }}"

@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  iperf:
+    image: registry.jojoc4.ch/tm-iperf
+    restart: always
+    ports:
+      - "5201:5201/tcp"
+      - "5201:5201/udp"
+    environment:
+      - SERVER=true
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      - MARIADB_ROOT_PASSWORD=example
+    volumes:
+      - ./sql/createdb.sql:/docker-entrypoint-initdb.d/1.sql
+      - my-db:/var/lib/mysql
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+  bench-api:
+    image: registry.jojoc4.ch/tm-benchmark-api
+    restart: always
+    ports:
+      - 81:80
+  front:
+    image: registry.jojoc4.ch/tm-benchmark-front
+    restart: always
+    ports:
+      - 80:80
+  runner:
+    image: registry.jojoc4.ch/tm-benchmark-runner
+    restart: always
+    environment:
+      - CPIP=192.168.100.167
+volumes:
+  my-db:

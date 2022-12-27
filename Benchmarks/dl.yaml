@@ -1,0 +1,22 @@
+- name: dl
+  hosts: virtualmachines
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+    - name: Install dl
+      ansible.builtin.apt:
+        name: python3-pip
+        update_cache: yes
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/dl/
+        dest: /root
+        owner: root
+    - name: Install python packages
+      ansible.builtin.command: pip install -r requirements.txt
+    - name: Run bench
+      ansible.builtin.command: bash /root/run.sh
+      environment:
+        CONTROLPLANEIP: "http://{{ CONTROLPLANEIP }}:81/result"
+        SYSTEM: "{{ SYSTEM }}"
+        TYPE: "{{ TYPE }}"

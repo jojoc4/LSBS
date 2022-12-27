@@ -1,0 +1,33 @@
+- name: docker
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ping my hosts
+      ansible.builtin.ping:
+
+    - name: add repo
+      ansible.builtin.command: dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+    - name: install docker
+      ansible.builtin.command: dnf -y install docker-ce docker-ce-cli containerd.io docker-compose-plugin
+
+    - name: Add users to the Docker group
+      user:
+        name: "rocky"
+        groups: docker
+        append: yes
+
+    - name: Start Docker Daemon
+      systemd:
+        state: started
+        enabled: yes
+        name: docker
+
+    - name: Copy files
+      ansible.builtin.copy:
+        src: ./files/
+        dest: /home/rocky
+        owner: rocky
+
+    - name: run control plane
+      ansible.builtin.command: docker compose up -d
