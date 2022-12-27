@@ -1,6 +1,0 @@
-
-.DS_Store
-
-app/__pycache__/
-venv/
-bench-ansible/

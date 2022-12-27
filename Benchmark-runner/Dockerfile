@@ -7,6 +7,6 @@ COPY ./Benchmark-runner/sshconfig /root/.ssh/config
 
 ADD ./Benchmarks/* ./bench-ansible/
 
-COPY ./Benchmark-runner/* .
+COPY ./Benchmark-runner/* ./
 
 CMD [ "bash", "run.sh" ]

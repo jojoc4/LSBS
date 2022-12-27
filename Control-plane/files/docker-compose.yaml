@@ -32,7 +32,7 @@ services:
     ports:
       - 80:80
   runner:
-    image: registry.jojoc4.ch/tm-benchmark-runner
+    image: jojoc4/lsbs-runner:latest
     restart: always
     environment:
       - CPIP=192.168.100.167
