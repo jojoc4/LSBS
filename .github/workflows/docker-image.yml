@@ -25,3 +25,9 @@ jobs:
           push: true
           tags: jojoc4/lsbs-runner:latest
           file: Benchmark-runner/Dockerfile
+      - name: Build and push frontend
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-front:latest
+          file: Frontend/Dockerfile

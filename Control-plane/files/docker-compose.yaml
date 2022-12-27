@@ -27,7 +27,7 @@ services:
     ports:
       - 81:80
   front:
-    image: registry.jojoc4.ch/tm-benchmark-front
+    image: jojoc4/lsbs-front:latest
     restart: always
     ports:
       - 80:80
