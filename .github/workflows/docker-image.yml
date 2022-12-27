@@ -36,4 +36,4 @@ jobs:
         with:
           push: true
           tags: jojoc4/lsbs-api:latest
-          file: Benchamrk-api/Dockerfile
+          file: Benchmark-api/Dockerfile
