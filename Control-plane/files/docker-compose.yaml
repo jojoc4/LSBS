@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   iperf:
-    image: registry.jojoc4.ch/tm-iperf
+    image: jojoc4/lsbs/iperf
     restart: always
     ports:
       - "5201:5201/tcp"

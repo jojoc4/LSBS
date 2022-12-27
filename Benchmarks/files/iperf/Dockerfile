@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 RUN apt update && DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt install -y iperf3 iputils-ping curl
-ADD ./* /bench/
+ADD ./Benchmarks/files/iperf/* /bench/
 RUN chmod +x /bench/run.sh
 WORKDIR /bench/
 ENV SERVER=false

@@ -14,7 +14,7 @@ case "$BENCHMARK" in
    done
    k0s kubectl delete pod fio --now
 
-   k0s kubectl run iperf --image=registry.jojoc4.ch/tm-iperf --env="CONTROLPLANEIP=$CONTROLPLANEIP" --env="SYSTEM=$SYSTEM" --env="TYPE=$TYPE" --env="SERVERNAME=$SERVERNAME" --restart=Never --request-timeout=0
+   k0s kubectl run iperf --image=jojoc4/lsbs-iperf --env="CONTROLPLANEIP=$CONTROLPLANEIP" --env="SYSTEM=$SYSTEM" --env="TYPE=$TYPE" --env="SERVERNAME=$SERVERNAME" --restart=Never --request-timeout=0
    while [[ $(k0s kubectl get pods iperf --no-headers -o custom-columns=":status.phase") != "Succeeded" ]]; do
       sleep 1
    done
@@ -58,7 +58,7 @@ case "$BENCHMARK" in
    done
    k0s kubectl delete pod fio --now
    ;;
-3) k0s kubectl run iperf --image=registry.jojoc4.ch/tm-iperf --env="CONTROLPLANEIP=$CONTROLPLANEIP" --env="SYSTEM=$SYSTEM" --env="TYPE=$TYPE" --env="SERVERNAME=$SERVERNAME" --restart=Never --request-timeout=0
+3) k0s kubectl run iperf --image=jojoc4/lsbs-iperf --env="CONTROLPLANEIP=$CONTROLPLANEIP" --env="SYSTEM=$SYSTEM" --env="TYPE=$TYPE" --env="SERVERNAME=$SERVERNAME" --restart=Never --request-timeout=0
    while [[ $(k0s kubectl get pods iperf --no-headers -o custom-columns=":status.phase") != "Succeeded" ]]; do
       sleep 1
    done

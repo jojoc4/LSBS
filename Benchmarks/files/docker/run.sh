@@ -3,7 +3,7 @@ case "$BENCHMARK" in
 
 0)  docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-hpcc
     docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-fio
-    docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE -e SERVERNAME=$SERVERNAME registry.jojoc4.ch/tm-iperf
+    docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE -e SERVERNAME=$SERVERNAME jojoc4/lsbs-iperf
     docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-blender
     docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-dl
     docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-bdd
@@ -11,7 +11,7 @@ case "$BENCHMARK" in
     ;;
 1)  docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-hpcc ;;
 2)  docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-fio ;;
-3)  docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE -e SERVERNAME=$SERVERNAME registry.jojoc4.ch/tm-iperf ;;
+3)  docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE -e SERVERNAME=$SERVERNAME jojoc4/lsbs-iperf ;;
 4)  docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-blender ;;
 5)  docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-bdd ;;
 6)  docker run --rm -e CONTROLPLANEIP=$CONTROLPLANEIP -e SYSTEM=$SYSTEM -e TYPE=$TYPE registry.jojoc4.ch/tm-dl ;;

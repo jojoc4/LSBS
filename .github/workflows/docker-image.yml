@@ -37,3 +37,9 @@ jobs:
           push: true
           tags: jojoc4/lsbs-api:latest
           file: Benchmark-api/Dockerfile
+      - name: Build and push iperf
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-iperf:latest
+          file: Benchmarks/files/iperf/Dockerfile
