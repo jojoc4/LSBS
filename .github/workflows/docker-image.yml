@@ -49,3 +49,33 @@ jobs:
           push: true
           tags: jojoc4/lsbs-bdd:latest
           file: Benchmarks/files/bdd/Dockerfile
+      - name: Build and push blender
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-blender:latest
+          file: Benchmarks/files/blender/Dockerfile
+      - name: Build and push dl
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-dl:latest
+          file: Benchmarks/files/dl/Dockerfile
+      - name: Build and push fio
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-fio:latest
+          file: Benchmarks/files/fio/Dockerfile
+      - name: Build and push hpcc
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-hpcc:latest
+          file: Benchmarks/files/hpcc/Dockerfile
+      - name: Build and push rest
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-rest:latest
+          file: Benchmarks/files/rest/Dockerfile
