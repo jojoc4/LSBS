@@ -32,7 +32,7 @@ case "$BENCHMARK" in
    done
    k0s kubectl delete pod dl --now
 
-   k0s kubectl run bdd --image=registry.jojoc4.ch/tm-bdd --env="CONTROLPLANEIP=$CONTROLPLANEIP" --env="SYSTEM=$SYSTEM" --env="TYPE=$TYPE" --restart=Never --request-timeout=0
+   k0s kubectl run bdd --image=jojoc4/lsbs-bdd --env="CONTROLPLANEIP=$CONTROLPLANEIP" --env="SYSTEM=$SYSTEM" --env="TYPE=$TYPE" --restart=Never --request-timeout=0
    while [[ $(k0s kubectl get pods bdd --no-headers -o custom-columns=":status.phase") != "Succeeded" ]]; do
       sleep 1
    done
@@ -70,7 +70,7 @@ case "$BENCHMARK" in
    done
    k0s kubectl delete pod blender --now
    ;;
-5) k0s kubectl run bdd --image=registry.jojoc4.ch/tm-bdd --env="CONTROLPLANEIP=$CONTROLPLANEIP" --env="SYSTEM=$SYSTEM" --env="TYPE=$TYPE" --restart=Never --request-timeout=0
+5) k0s kubectl run bdd --image=jojoc4/lsbs-bdd --env="CONTROLPLANEIP=$CONTROLPLANEIP" --env="SYSTEM=$SYSTEM" --env="TYPE=$TYPE" --restart=Never --request-timeout=0
    while [[ $(k0s kubectl get pods bdd --no-headers -o custom-columns=":status.phase") != "Succeeded" ]]; do
       sleep 1
    done

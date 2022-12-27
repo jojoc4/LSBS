@@ -43,3 +43,9 @@ jobs:
           push: true
           tags: jojoc4/lsbs-iperf:latest
           file: Benchmarks/files/iperf/Dockerfile
+      - name: Build and push bdd
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: jojoc4/lsbs-bdd:latest
+          file: Benchmarks/files/bdd/Dockerfile
