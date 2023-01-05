@@ -12,7 +12,4 @@ tensorboard-plugin-wit
 tensorflow-estimator
 tensorflow-io-gcs-filesystem
 protobuf==3.20.*
-sklearn
 scikit-learn
-
-
