@@ -844,7 +844,10 @@
 
             var layout = {
               title: 'HPL',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'Tflo/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(TESTER, data, layout);
@@ -871,7 +874,10 @@
 
             var layout = {
               title: 'DGEMM',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'Gflo/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart1, data, layout);
@@ -899,7 +905,10 @@
 
             var layout = {
               title: 'Random memory access',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'GU/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart2, data, layout);
@@ -927,7 +936,10 @@
 
             var layout = {
               title: 'Sequential memory access',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'GB/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart3, data, layout);
@@ -960,7 +972,10 @@
 
             var layout = {
               title: 'Random read IOPS',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'IO/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(TESTER, data, layout);
@@ -987,7 +1002,10 @@
 
             var layout = {
               title: 'Random write IOPS',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'IO/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart1, data, layout);
@@ -1015,7 +1033,10 @@
 
             var layout = {
               title: 'Sequential read IOPS',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'IO/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart2, data, layout);
@@ -1043,7 +1064,10 @@
 
             var layout = {
               title: 'Sequential write IOPS',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'IO/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart3, data, layout);
@@ -1070,7 +1094,10 @@
 
             var layout = {
               title: 'Random read speed',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'KB/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart4, data, layout);
@@ -1097,7 +1124,10 @@
 
             var layout = {
               title: 'Random write speed',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'KB/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart5, data, layout);
@@ -1125,7 +1155,10 @@
 
             var layout = {
               title: 'Sequential read speed',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'KB/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart6, data, layout);
@@ -1153,7 +1186,10 @@
 
             var layout = {
               title: 'Sequential write speed',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'KB/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart7, data, layout);
@@ -1187,7 +1223,10 @@
 
             var layout = {
               title: 'Ping',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'ms (Lesser is better)'
+              }
             };
 
             Plotly.newPlot(TESTER, data, layout);
@@ -1214,7 +1253,10 @@
 
             var layout = {
               title: 'Iperf send',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'Gb/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart1, data, layout);
@@ -1242,7 +1284,10 @@
 
             var layout = {
               title: 'IPerf receive',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'Gb/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart2, data, layout);
@@ -1270,7 +1315,10 @@
 
             var layout = {
               title: 'IPerf UDP',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'Mb/s (Greater is better)'
+              }
             };
 
             Plotly.newPlot(chart3, data, layout);
@@ -1304,7 +1352,10 @@
 
             var layout = {
               title: 'Blender classroom render',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'seconds (Lesser is better)'
+              }
             };
 
             Plotly.newPlot(TESTER, data, layout);
@@ -1338,7 +1389,10 @@
 
             var layout = {
               title: 'Database operations',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'seconds (Lesser is better)'
+              }
             };
 
             Plotly.newPlot(TESTER, data, layout);
@@ -1372,7 +1426,10 @@
 
             var layout = {
               title: 'Deep learning GAN model training',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'seconds (Lesser is better)'
+              }
             };
 
             Plotly.newPlot(TESTER, data, layout);
@@ -1406,7 +1463,10 @@
 
             var layout = {
               title: 'REST server operation',
-              showlegend: true
+              showlegend: true,
+              yaxis: {
+                title: 'seconds (Lesser is better)'
+              }
             };
 
             Plotly.newPlot(TESTER, data, layout);
