@@ -10,7 +10,7 @@ require 'config.php';
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
-  <title>BSRVS</title>
+  <title>LSBS</title>
   <meta name="description" content="Benchmark scheduling and results visualization system" />
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i&amp;display=swap" />
@@ -23,7 +23,7 @@ require 'config.php';
       <div class="container-fluid d-flex flex-column p-0">
         <a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
           <div class="sidebar-brand-icon rotate-n-15"></div>
-          <div class="sidebar-brand-text mx-3"><span>BSRVS</span></div>
+          <div class="sidebar-brand-text mx-3"><span>LSBS</span></div>
         </a>
         <hr class="sidebar-divider my-0" />
         <ul class="navbar-nav text-light" id="accordionSidebar">
@@ -81,7 +81,7 @@ require 'config.php';
       <footer class="bg-white sticky-footer">
         <div class="container my-auto">
           <div class="text-center my-auto copyright">
-            <span>Copyright © BSRVS 2022</span>
+            <span>Copyright ©LSBS 2022</span>
           </div>
         </div>
       </footer>
